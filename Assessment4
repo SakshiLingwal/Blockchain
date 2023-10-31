@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract mytoken{
+    string public tokennm="Meta";
+    string public tokenabre="Met";
+    uint public supply=0;
+    mapping (address=>uint)public balances;
+
+    function mint(address _address,uint _value)public {
+        supply+=_value;
+        balances[_address]+=_value;
+    }
+
+    function burn(address _address,uint _value)public {//we can't burn more than we've
+        if(balances[_address]>=_value){
+            supply-=_value;
+            balances[_address]-=_value;
+        }
+    }
+}
