@@ -1,0 +1,52 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract VariableExample {
+    // Declare four different types of variables
+    int public myInteger;
+    string public myString;
+    bool public myBoolean;
+    address public myAddress;
+
+    // Set the initial values for these variables
+    constructor() {
+        myInteger = 42;
+        myString = "Hello, World!";
+        myBoolean = true;
+        myAddress = msg.sender;
+    }
+
+    // Set functions for each variable
+    function setMyInteger(int _value) public {
+        myInteger = _value;
+    }
+
+    function setMyString(string memory _value) public {
+        myString = _value;
+    }
+
+    function setMyBoolean(bool _value) public {
+        myBoolean = _value;
+    }
+
+    function setMyAddress(address _value) public {
+        myAddress = _value;
+    }
+
+    // Get functions for each variable
+    function getMyInteger() public view returns (int) {
+        return myInteger;
+    }
+
+    function getMyString() public view returns (string memory) {
+        return myString;
+    }
+
+    function getMyBoolean() public view returns (bool) {
+        return myBoolean;
+    }
+
+    function getMyAddress() public view returns (address) {
+        return myAddress;
+    }
+}
